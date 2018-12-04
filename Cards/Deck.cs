@@ -8,6 +8,10 @@ namespace Cards
 {
     public class Deck
     {
+        private List<Card> cards;
+        public Deck(bool type)
+        {
 
+        }
     }
 }

@@ -9,15 +9,20 @@ namespace Cards
 {
     public enum Color
     {
-        Spade,
-        Heart,
-        Club,
-        Diamond
+        Spades,
+        Hearts,
+        Clubs,
+        Diamonds
     }
     class Card : PictureBox
     {
         private int value;
         private Color color;
-
+        public Card(int value, Color color)
+        {
+            this.value = value;
+            this.color = color;
+            this.ImageLocation = "./resources/" + value.ToString() + color.ToString() + ".jpg";
+        }
     }
 }
