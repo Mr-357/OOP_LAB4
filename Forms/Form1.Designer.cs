@@ -44,7 +44,7 @@
             this.btnReveal = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.groupOne = new System.Windows.Forms.GroupBox();
-            this.groupTwo = new System.Windows.Forms.GroupBox();
+            this.btnEnd = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
@@ -173,21 +173,21 @@
             // 
             // groupOne
             // 
-            this.groupOne.Location = new System.Drawing.Point(12, 39);
+            this.groupOne.Location = new System.Drawing.Point(12, 127);
             this.groupOne.Name = "groupOne";
             this.groupOne.Size = new System.Drawing.Size(776, 140);
             this.groupOne.TabIndex = 9;
             this.groupOne.TabStop = false;
             this.groupOne.Text = "Table";
             // 
-            // groupTwo
+            // btnEnd
             // 
-            this.groupTwo.Location = new System.Drawing.Point(261, 192);
-            this.groupTwo.Name = "groupTwo";
-            this.groupTwo.Size = new System.Drawing.Size(295, 140);
-            this.groupTwo.TabIndex = 10;
-            this.groupTwo.TabStop = false;
-            this.groupTwo.Text = "Hand";
+            this.btnEnd.Location = new System.Drawing.Point(546, 403);
+            this.btnEnd.Name = "btnEnd";
+            this.btnEnd.Size = new System.Drawing.Size(75, 23);
+            this.btnEnd.TabIndex = 11;
+            this.btnEnd.Text = "button1";
+            this.btnEnd.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -195,7 +195,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(113)))), ((int)(((byte)(72)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.groupTwo);
+            this.Controls.Add(this.btnEnd);
             this.Controls.Add(this.groupOne);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnReveal);
@@ -208,7 +208,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Poker";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
@@ -235,7 +235,7 @@
         private System.Windows.Forms.Button btnReveal;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupOne;
-        private System.Windows.Forms.GroupBox groupTwo;
+        private System.Windows.Forms.Button btnEnd;
     }
 }
 

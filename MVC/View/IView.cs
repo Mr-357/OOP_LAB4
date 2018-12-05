@@ -1,4 +1,5 @@
-﻿using MVC.Controller;
+﻿using Cards;
+using MVC.Controller;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,10 @@ namespace MVC.View
         {
             get;
             set;
+        }
+        List<Card> Cards
+        {
+            get;
         }
         void AddListener(IController controller);
     }

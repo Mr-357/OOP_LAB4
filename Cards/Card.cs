@@ -19,19 +19,26 @@ namespace Cards
         private string value;
         private Color color;
         private bool flipped;
+        private bool selected;
         private string back = "./resources/red_back.png";
         public Card(string value, Color color)
         {
-            this.value = value;
-            this.color = color;
+            this.Value = value;
+            this.Color = color;
             this.ImageLocation = back;
             flipped = false;
+            this.Size = new System.Drawing.Size(40, 140);
+            this.SizeMode = PictureBoxSizeMode.StretchImage;
         }
+
+        public string Value { get => value; set => this.value = value; }
+        public Color Color { get => color; set => color = value; }
+
         public void Flip()
         {
             if (!flipped)
             {
-                this.ImageLocation = "./resources/" + value + color.ToString() + ".png";
+                this.ImageLocation = "./resources/" + Value + Color.ToString() + ".png";
                 flipped = true;
             }
             else
