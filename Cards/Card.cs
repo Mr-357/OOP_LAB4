@@ -16,13 +16,13 @@ namespace Cards
     }
     class Card : PictureBox
     {
-        private int value;
+        private string value;
         private Color color;
-        public Card(int value, Color color)
+        public Card(string value, Color color)
         {
             this.value = value;
             this.color = color;
-            this.ImageLocation = "./resources/" + value.ToString() + color.ToString() + ".jpg";
+            this.ImageLocation = "./resources/" + value + color.ToString() + ".png";
         }
     }
 }
