@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace Cards
 {
-    public class Deck
+  /*  public class Deck
     {
-        private List<Card> cards;
-        public Deck(bool type)
-        {
-
-        }
-    }
+    
+    }*/
 }

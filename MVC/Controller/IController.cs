@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MVC
+namespace MVC.Controller
 {
-    public class Class1
+    public interface IController
     {
+
     }
 }

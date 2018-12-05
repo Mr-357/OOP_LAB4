@@ -51,5 +51,11 @@
   <ItemGroup>
     <Folder Include="resources\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Forms\Forms.csproj">
+      <Project>{45b05ad1-09e3-42cd-81ec-3865d6860601}</Project>
+      <Name>Forms</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
