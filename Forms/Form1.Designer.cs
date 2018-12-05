@@ -45,6 +45,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupOne = new System.Windows.Forms.GroupBox();
             this.btnEnd = new System.Windows.Forms.Button();
+            this.basicPokerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.frenchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.standardToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numBet)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +66,8 @@
             // 
             this.newGameToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.texasHoldToolStripMenuItem,
-            this.standardToolStripMenuItem});
+            this.standardToolStripMenuItem,
+            this.basicPokerToolStripMenuItem});
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
             this.newGameToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.newGameToolStripMenuItem.Text = "New Game";
@@ -80,14 +84,14 @@
             // frenchDeckToolStripMenuItem
             // 
             this.frenchDeckToolStripMenuItem.Name = "frenchDeckToolStripMenuItem";
-            this.frenchDeckToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.frenchDeckToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.frenchDeckToolStripMenuItem.Text = "French Deck";
             this.frenchDeckToolStripMenuItem.Click += new System.EventHandler(this.frenchDeckToolStripMenuItem_Click);
             // 
             // standardDeckToolStripMenuItem
             // 
             this.standardDeckToolStripMenuItem.Name = "standardDeckToolStripMenuItem";
-            this.standardDeckToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.standardDeckToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.standardDeckToolStripMenuItem.Text = "Standard Deck";
             this.standardDeckToolStripMenuItem.Click += new System.EventHandler(this.standardDeckToolStripMenuItem_Click);
             // 
@@ -103,14 +107,14 @@
             // frenchDeckToolStripMenuItem1
             // 
             this.frenchDeckToolStripMenuItem1.Name = "frenchDeckToolStripMenuItem1";
-            this.frenchDeckToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.frenchDeckToolStripMenuItem1.Size = new System.Drawing.Size(150, 22);
             this.frenchDeckToolStripMenuItem1.Text = "French Deck";
             this.frenchDeckToolStripMenuItem1.Click += new System.EventHandler(this.frenchDeckToolStripMenuItem1_Click);
             // 
             // standardDeckToolStripMenuItem1
             // 
             this.standardDeckToolStripMenuItem1.Name = "standardDeckToolStripMenuItem1";
-            this.standardDeckToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.standardDeckToolStripMenuItem1.Size = new System.Drawing.Size(150, 22);
             this.standardDeckToolStripMenuItem1.Text = "Standard Deck";
             this.standardDeckToolStripMenuItem1.Click += new System.EventHandler(this.standardDeckToolStripMenuItem1_Click);
             // 
@@ -198,6 +202,29 @@
             this.btnEnd.UseVisualStyleBackColor = true;
             this.btnEnd.Click += new System.EventHandler(this.btnEnd_Click);
             // 
+            // basicPokerToolStripMenuItem
+            // 
+            this.basicPokerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.frenchToolStripMenuItem,
+            this.standardToolStripMenuItem1});
+            this.basicPokerToolStripMenuItem.Name = "basicPokerToolStripMenuItem";
+            this.basicPokerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.basicPokerToolStripMenuItem.Text = "Basic Poker";
+            // 
+            // frenchToolStripMenuItem
+            // 
+            this.frenchToolStripMenuItem.Name = "frenchToolStripMenuItem";
+            this.frenchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.frenchToolStripMenuItem.Text = "French";
+            this.frenchToolStripMenuItem.Click += new System.EventHandler(this.frenchToolStripMenuItem_Click);
+            // 
+            // standardToolStripMenuItem1
+            // 
+            this.standardToolStripMenuItem1.Name = "standardToolStripMenuItem1";
+            this.standardToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.standardToolStripMenuItem1.Text = "Standard";
+            this.standardToolStripMenuItem1.Click += new System.EventHandler(this.standardToolStripMenuItem1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,6 +272,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupOne;
         private System.Windows.Forms.Button btnEnd;
+        private System.Windows.Forms.ToolStripMenuItem basicPokerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem frenchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem standardToolStripMenuItem1;
     }
 }
 

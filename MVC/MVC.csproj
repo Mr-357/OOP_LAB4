@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\BasicPoker.cs" />
     <Compile Include="Controller\IController.cs" />
     <Compile Include="Controller\Standard.cs" />
     <Compile Include="Controller\Texas.cs" />

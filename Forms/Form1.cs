@@ -122,7 +122,7 @@ namespace Forms
         private void standardDeckToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             SetStartingPoints();
-            FrenchDeck deck = new FrenchDeck();
+            StandardDeck deck = new StandardDeck();
             deck.init();
             this.controller = new Standard(deck, this);
             controller.start();
@@ -131,7 +131,7 @@ namespace Forms
 
         private void btnBet_Click(object sender, EventArgs e)
         {
-            this.controller.bet();
+          //  this.controller.bet(); // visak dugme
         }
 
         private void btnSwap_Click(object sender, EventArgs e)
@@ -147,6 +147,26 @@ namespace Forms
         private void btnEnd_Click(object sender, EventArgs e)
         {
             this.controller.stop();
+        }
+
+        private void frenchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetStartingPoints();
+            FrenchDeck deck = new FrenchDeck();
+            deck.init();
+            this.controller = new BasicPoker(deck, this);
+            controller.start();
+            btnSwap.Text = "Pointless";
+        }
+
+        private void standardToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            SetStartingPoints();
+            StandardDeck deck = new StandardDeck();
+            deck.init();
+            this.controller = new BasicPoker(deck, this);
+            controller.start();
+            btnSwap.Text = "Pointless";
         }
     }
 }
