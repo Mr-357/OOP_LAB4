@@ -12,5 +12,10 @@ namespace MVC
         void init();
         Card draw();
         List<Card> swap(List<Card> toSwap);
+        void refresh();
+        int cardsleft
+        {
+            get;
+        }
     }
 }

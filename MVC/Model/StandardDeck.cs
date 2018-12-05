@@ -7,11 +7,23 @@ using Cards;
 
 namespace MVC.Model
 {
-    class StandardDeck : IModel
+    public class StandardDeck : IModel
     {
         private List<Card> cards;
-      
-    
+
+        public void refresh()
+        {
+            init();
+        }
+        public int cardsleft
+        {
+            get
+            {
+
+                return this.cards.Count;
+            }
+        }
+
 
         public Card draw()
         {
@@ -27,16 +39,16 @@ namespace MVC.Model
             {
                 int j = 2;
 
-                cards.Add(new Card("A", (Color)(i)));
+                cards.Add(new Card("A", (Suits)(i)));
                
 
                 for (; j <= 10; j++)
                 {
-                    cards.Add(new Card(j.ToString(), (Color)(i)));
+                    cards.Add(new Card(j.ToString(), (Suits)(i)));
                 }
-                cards.Add(new Card("J", (Color)(i)));
-                cards.Add(new Card("Q", (Color)(i)));
-                cards.Add(new Card("K", (Color)(i)));
+                cards.Add(new Card("J", (Suits)(i)));
+                cards.Add(new Card("Q", (Suits)(i)));
+                cards.Add(new Card("K", (Suits)(i)));
             }
             Shuffle();
         }

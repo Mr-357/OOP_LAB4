@@ -11,7 +11,7 @@ namespace MVC.Controller
     {
         void start();
         void stop();
-        IModel model
+        IModel Model
         {
             get;
             set;
@@ -22,7 +22,7 @@ namespace MVC.Controller
             get;
             set;
         }
-        IView view
+        IView View
         {
             get;
             set;
@@ -30,6 +30,6 @@ namespace MVC.Controller
         void swap();
         void deal();
         void calculate();
-
+        void bet();
     }
 }

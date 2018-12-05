@@ -23,7 +23,9 @@ namespace MVC.View
         List<Card> Cards
         {
             get;
+            set;
         }
         void AddListener(IController controller);
+        void SetStartingPoints();
     }
 }

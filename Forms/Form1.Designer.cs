@@ -39,14 +39,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
             this.btnBet = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numBet = new System.Windows.Forms.NumericUpDown();
             this.btnSwap = new System.Windows.Forms.Button();
             this.btnReveal = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.groupOne = new System.Windows.Forms.GroupBox();
             this.btnEnd = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBet)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -82,12 +82,14 @@
             this.frenchDeckToolStripMenuItem.Name = "frenchDeckToolStripMenuItem";
             this.frenchDeckToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.frenchDeckToolStripMenuItem.Text = "French Deck";
+            this.frenchDeckToolStripMenuItem.Click += new System.EventHandler(this.frenchDeckToolStripMenuItem_Click);
             // 
             // standardDeckToolStripMenuItem
             // 
             this.standardDeckToolStripMenuItem.Name = "standardDeckToolStripMenuItem";
             this.standardDeckToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.standardDeckToolStripMenuItem.Text = "Standard Deck";
+            this.standardDeckToolStripMenuItem.Click += new System.EventHandler(this.standardDeckToolStripMenuItem_Click);
             // 
             // standardToolStripMenuItem
             // 
@@ -103,12 +105,14 @@
             this.frenchDeckToolStripMenuItem1.Name = "frenchDeckToolStripMenuItem1";
             this.frenchDeckToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.frenchDeckToolStripMenuItem1.Text = "French Deck";
+            this.frenchDeckToolStripMenuItem1.Click += new System.EventHandler(this.frenchDeckToolStripMenuItem1_Click);
             // 
             // standardDeckToolStripMenuItem1
             // 
             this.standardDeckToolStripMenuItem1.Name = "standardDeckToolStripMenuItem1";
             this.standardDeckToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.standardDeckToolStripMenuItem1.Text = "Standard Deck";
+            this.standardDeckToolStripMenuItem1.Click += new System.EventHandler(this.standardDeckToolStripMenuItem1_Click);
             // 
             // label1
             // 
@@ -134,15 +138,17 @@
             this.btnBet.Name = "btnBet";
             this.btnBet.Size = new System.Drawing.Size(75, 23);
             this.btnBet.TabIndex = 4;
-            this.btnBet.Text = "button1";
+            this.btnBet.Text = "Bet";
             this.btnBet.UseVisualStyleBackColor = true;
+            this.btnBet.Visible = false;
+            this.btnBet.Click += new System.EventHandler(this.btnBet_Click);
             // 
-            // numericUpDown1
+            // numBet
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(219, 406);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(63, 20);
-            this.numericUpDown1.TabIndex = 5;
+            this.numBet.Location = new System.Drawing.Point(219, 406);
+            this.numBet.Name = "numBet";
+            this.numBet.Size = new System.Drawing.Size(63, 20);
+            this.numBet.TabIndex = 5;
             // 
             // btnSwap
             // 
@@ -150,8 +156,9 @@
             this.btnSwap.Name = "btnSwap";
             this.btnSwap.Size = new System.Drawing.Size(75, 23);
             this.btnSwap.TabIndex = 6;
-            this.btnSwap.Text = "button1";
+            this.btnSwap.Text = "Swap";
             this.btnSwap.UseVisualStyleBackColor = true;
+            this.btnSwap.Click += new System.EventHandler(this.btnSwap_Click);
             // 
             // btnReveal
             // 
@@ -159,8 +166,9 @@
             this.btnReveal.Name = "btnReveal";
             this.btnReveal.Size = new System.Drawing.Size(75, 23);
             this.btnReveal.TabIndex = 7;
-            this.btnReveal.Text = "button1";
+            this.btnReveal.Text = "Reveal";
             this.btnReveal.UseVisualStyleBackColor = true;
+            this.btnReveal.Click += new System.EventHandler(this.btnReveal_Click);
             // 
             // label2
             // 
@@ -173,12 +181,12 @@
             // 
             // groupOne
             // 
-            this.groupOne.Location = new System.Drawing.Point(12, 127);
+            this.groupOne.Location = new System.Drawing.Point(12, 120);
             this.groupOne.Name = "groupOne";
-            this.groupOne.Size = new System.Drawing.Size(776, 140);
+            this.groupOne.Size = new System.Drawing.Size(776, 150);
             this.groupOne.TabIndex = 9;
             this.groupOne.TabStop = false;
-            this.groupOne.Text = "Table";
+            this.groupOne.Text = "Hand";
             // 
             // btnEnd
             // 
@@ -186,8 +194,9 @@
             this.btnEnd.Name = "btnEnd";
             this.btnEnd.Size = new System.Drawing.Size(75, 23);
             this.btnEnd.TabIndex = 11;
-            this.btnEnd.Text = "button1";
+            this.btnEnd.Text = "End Game";
             this.btnEnd.UseVisualStyleBackColor = true;
+            this.btnEnd.Click += new System.EventHandler(this.btnEnd_Click);
             // 
             // Form1
             // 
@@ -200,7 +209,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnReveal);
             this.Controls.Add(this.btnSwap);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.numBet);
             this.Controls.Add(this.btnBet);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.label1);
@@ -211,7 +220,7 @@
             this.Text = "Poker";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,7 +239,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblScore;
         private System.Windows.Forms.Button btnBet;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numBet;
         private System.Windows.Forms.Button btnSwap;
         private System.Windows.Forms.Button btnReveal;
         private System.Windows.Forms.Label label2;
