@@ -17,5 +17,6 @@ namespace MVC
         {
             get;
         }
+        void EnableSelect();
     }
 }

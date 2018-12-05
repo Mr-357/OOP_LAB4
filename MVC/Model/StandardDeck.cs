@@ -10,9 +10,15 @@ namespace MVC.Model
     public class StandardDeck : IModel
     {
         private List<Card> cards;
-
+        private bool selection;
         public void refresh()
         {
+            init();
+        }
+
+        public void EnableSelect()
+        {
+            selection = true;
             init();
         }
         public int cardsleft
@@ -51,8 +57,18 @@ namespace MVC.Model
                 cards.Add(new Card("K", (Suits)(i)));
             }
             Shuffle();
+            if (selection)
+            {
+                ActivateSelection();
+            }
         }
-
+        public void ActivateSelection()
+        {
+            foreach (Card c in cards)
+            {
+                c.EnableSelecting();
+            }
+        }
         public void Shuffle()
         {
             List<Card> tmp = new List<Card>();

@@ -20,7 +20,8 @@ namespace MVC.Controller
         Bobtail_straight = 12,
         Three_of_a_kind = 8,
         Two_pair = 5,
-        Pair=1
+        Pair=1,
+        Lose=0
     }
     public class Texas : IController
     {
@@ -28,6 +29,7 @@ namespace MVC.Controller
         private IView view;
         int mult;
         int multcount;
+        Hold_EmCombos combo;
         public Texas(IModel model, IView view)
         {
             this.model = model;
@@ -71,10 +73,151 @@ namespace MVC.Controller
         {
         //    throw new NotImplementedException();
         }
+        private bool Pair()//
+        {
+            bool temp = false;
+            int i = 0;
+            while (!temp && i <5)
+            {
+                int count = 0;
+                foreach (Card c in this.view.Cards)
+                {
+                    if (c.Value == this.view.Cards[i].Value && c.Flipped && this.view.Cards[i].Flipped)
+                        count++;
+                }
+                if (count == 2)
+                    temp = true;
+                i++;
+            }
+            return temp;
+        }
+        private bool TwoPair()//
+        {
+            if (multcount < 2)
+                return false;
 
+            int hit = 0;
+            int count = 0;
+            for(int i=0;i<this.view.Cards.Count;i++)
+            {
+                count = 0;
+                foreach (Card card in this.view.Cards)
+                {
+                    if (this.view.Cards[i].Value == card.Value && card.Flipped && this.view.Cards[i].Flipped)
+                        hit++;
+                    if (hit == 2)
+                        count++;
+                }
+            }
+            if (count == 4)
+                return true;
+            return false;
+        }
+        private bool ThreeOfAKind() // 
+        {
+            if (multcount < 1)
+                return false;
+            bool ret = false;
+            int i = 0;
+            while (!ret && i < this.view.Cards.Count)
+            {
+                int count = 0;
+                foreach (Card c  in this.view.Cards)
+                {
+                    if (c.Value == this.view.Cards[i].Value  && (c.Flipped && this.view.Cards[i].Flipped))
+                        count++;
+                }
+                if (count == 3)
+                    ret = true;
+                i++;
+            }
+            return ret;
+        }
+        private bool Flush()//
+        {
+            if (multcount < 3)
+                return false;
+            bool ret = true;
+            for (int i = 0; i < this.view.Cards.Count-1;i++)
+            {
+                if (this.view.Cards[i].Color != this.view.Cards[i + 1].Color)
+                {
+                    ret = false;
+                    break;
+                }
+            }
+            return ret;
+        }
+        private bool Straight()//
+        {
+            if (multcount < 3)
+                return false;
+            return false;
+        }
+        private bool StraightFlush() //
+        {
+            if (Straight() && Flush())
+                return true;
+            return false;
+
+        }
         public void calculate()
         {
-            throw new NotImplementedException();
+            if (StraightFlush())
+            {
+                combo = Hold_EmCombos.Straight_Flush;
+                return;
+            }
+           /*if (FourOfAKind())
+            {
+                combo = Hold_EmCombos.Four_of_a_kind;
+                return;
+            }*/
+           /* if (BigDog())
+            {
+                combo = Hold_EmCombos.Big_dog;
+                return;
+            }*/
+            if (Flush())
+            {
+                combo = Hold_EmCombos.Flush;
+                return;
+            }
+            if (Straight())
+            {
+                combo = Hold_EmCombos.Straight;
+                return;
+            }
+          /*  if (LittleDog())
+            {
+                combo = Hold_EmCombos.Little_dog;
+                return;
+            }*/
+          /*  if (BobTailStraight())
+            {
+                combo = Hold_EmCombos.Bobtail_straight;
+                return;
+            }*/
+            if (ThreeOfAKind())
+            {
+                combo = Hold_EmCombos.Three_of_a_kind;
+                return;
+            }
+            if (TwoPair())
+            {
+                combo = Hold_EmCombos.Two_pair;
+                return;
+            }
+            if (Pair())
+            {
+                combo = Hold_EmCombos.Pair;
+                return;
+            }
+            else
+            {
+                combo = Hold_EmCombos.Lose;
+                return;
+            }
         }
 
         public void deal()
@@ -103,7 +246,24 @@ namespace MVC.Controller
 
         public void reveal()
         {
-            throw new NotImplementedException();
+            calculate();
+            if (combo == Hold_EmCombos.Lose)
+            {
+                this.score -= this.view.Bet;
+                MessageBox.Show("You lost " + this.view.Bet.ToString() + " points", "Flop", MessageBoxButtons.OK);
+            }
+            else
+            {
+                int add= this.view.Bet * mult * (int)combo;
+                this.score += add;
+                MessageBox.Show("You won " + add + " points with a \r\n "+this.combo.ToString(), "Win", MessageBoxButtons.OK);
+            }
+            if (this.score <= 0)
+            {
+                stop();
+                return;
+            }
+            deal();
         }
 
         public void start()

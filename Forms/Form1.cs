@@ -113,6 +113,7 @@ namespace Forms
             SetStartingPoints();
             FrenchDeck deck = new FrenchDeck();
             deck.init();
+            
             this.controller = new Standard(deck, this);
             controller.start();
             btnSwap.Text = "Swap Selected";

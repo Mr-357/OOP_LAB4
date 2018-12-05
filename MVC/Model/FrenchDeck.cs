@@ -10,7 +10,7 @@ namespace MVC.Model
     public class FrenchDeck :IModel
     {
         private List<Card> cards;
-
+        private bool selection = false;
         public int cardsleft
         {
             get
@@ -25,6 +25,12 @@ namespace MVC.Model
             Card ret = cards.Last();
             cards.Remove(ret);
             return ret;
+        }
+
+        public void EnableSelect()
+        {
+            selection = true;
+            init();
         }
 
         public void init()
@@ -46,8 +52,18 @@ namespace MVC.Model
                 cards.Add(new Card("K", (Suits)(i)));
             }
             Shuffle();
+            if (selection)
+            {
+                ActivateSelection();
+            }
         }
-
+        public void ActivateSelection()
+        {
+            foreach (Card c in cards)
+            {
+                c.EnableSelecting();
+            }
+        }
         public void refresh()
         {
             init();

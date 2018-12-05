@@ -27,43 +27,47 @@ namespace Cards
             this.Value = value;
             this.Color = color;
             this.ImageLocation = back;
-            flipped = false;
+            Flipped = false;
             this.Size = new System.Drawing.Size(90, 138);
             this.SizeMode = PictureBoxSizeMode.StretchImage;
             
         }
-        private void EnableSelecting()
+        public void EnableSelecting()
         {
             base.Click += new EventHandler(NewClick);
         }
         private void NewClick(object sender, EventArgs e)
         {
-            this.selected = !this.selected;
-            if (!selected)
+            
+            if (!Selected)
             {
                 this.BorderStyle = BorderStyle.Fixed3D;
+                this.selected = true;
             }
             else
             {
                 this.BorderStyle = BorderStyle.None;
+                this.selected = false;
             }
            
         }
 
         public string Value { get => value; set => this.value = value; }
         public Suits Color { get => color; set => color = value; }
+        public bool Flipped { get => flipped; set => flipped = value; }
+        public bool Selected { get => selected; set => selected = value; }
 
         public void Flip()
         {
-            if (!flipped)
+            if (!Flipped)
             {
                 this.ImageLocation = "./resources/" + Value + Color.ToString() + ".png";
-                flipped = true;
+                Flipped = true;
             }
             else
             {
                 this.ImageLocation = back;
-                flipped = false;
+                Flipped = false;
             }
         }
     }
